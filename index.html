@@ -12,25 +12,25 @@
   <style>
     /* ===== Color tokens ===== */
     :root{
-      --bg:#0b0f14;       /* page background (dark) */
-      --card:#0f141b;     /* card background */
-      --ink:#e6eef6;      /* main text on dark */
-      --muted:#9fb2c7;    /* secondary text on dark */
-      --accent:#ffd84d;   /* YELLOW accent (dark mode) */
-      --rule:#1c2530;     /* borders / dividers on dark */
-      --ring:#2a3a4c;     /* subtle ring */
-      --link:#ffe58a;     /* link on dark */
+      --bg:#0b0f14;       /* dark background */
+      --card:#0f141b;
+      --ink:#e6eef6;
+      --muted:#9fb2c7;
+      --accent:#ffd84d;   /* yellow accent (dark mode) */
+      --rule:#1c2530;
+      --ring:#2a3a4c;
+      --link:#ffe58a;
     }
     @media (prefers-color-scheme: light){
       :root{
-        --bg:#fbfdff;     /* page background (light) */
-        --card:#ffffff;   /* card background */
-        --ink:#0c1220;    /* main text on light */
-        --muted:#4b5563;  /* secondary text on light */
-        --accent:#fff9c4; /* VERY LIGHT YELLOW for light mode */
-        --rule:#e6eef6;   /* borders / dividers on light */
-        --ring:#fef9d8;   /* subtle ring */
-        --link:#a68b00;   /* link on light (gold-ish) */
+        --bg:#fffde7;     /* very light yellow background */
+        --card:#ffffff;
+        --ink:#0c1220;
+        --muted:#4b5563;
+        --accent:#fdd835; /* medium yellow accent for icons */
+        --rule:#f0eac2;
+        --ring:#fef9d8;
+        --link:#bfa400;   /* golden link color */
       }
     }
 
@@ -42,7 +42,6 @@
       font:16px/1.65 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Apple SD Gothic Neo, "Malgun Gothic", sans-serif;
       color:var(--ink);
       background:var(--bg);
-      /* soft accent glow */
       background-image:
         radial-gradient(70rem 70rem at 120% -20%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 60%),
         radial-gradient(60rem 60rem at -20% -40%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%);
@@ -69,14 +68,14 @@
     section{margin:22px 0}
     .section{background:var(--card); border:1px solid var(--rule); border-radius:22px; padding:24px}
 
-    /* Heading with BAR icon */
+    /* Heading with Caret icon */
     .h2{display:flex; align-items:center; gap:.8rem; margin:0 0 12px}
     .h2 .ico{display:inline-block}
-    .h2.bar .ico{
-      width:4px;        /* thickness of the bar */
-      height:20px;      /* length of the bar */
-      background:var(--accent);
-      border-radius:2px;
+    .h2.caret .ico{
+      width:0; height:0;
+      border-left:12px solid var(--accent); /* yellow triangle */
+      border-top:7px solid transparent;
+      border-bottom:7px solid transparent;
     }
     .h2 h2{font-size:clamp(18px,2.2vw,24px); margin:0}
 
@@ -137,7 +136,7 @@
     <!-- Education -->
     <section>
       <div class="section">
-        <div class="h2 bar"><span class="ico" aria-hidden="true"></span><h2>Education</h2></div>
+        <div class="h2 caret"><span class="ico" aria-hidden="true"></span><h2>Education</h2></div>
         <div class="edu">
           <div class="edu-item">
             <div>
@@ -160,13 +159,13 @@
     <!-- Publications -->
     <section>
       <div class="section">
-        <div class="h2 bar"><span class="ico" aria-hidden="true"></span><h2>Publications</h2></div>
+        <div class="h2 caret"><span class="ico" aria-hidden="true"></span><h2>Publications</h2></div>
         <div class="pubs">
           <article class="pub">
             <p class="pub-title">[2025] Paper Title — <span class="label">Conference</span></p>
             <p class="pub-meta">First Author, Co-authors · Venue · <a href="#">PDF</a> · <a href="#">Project</a> · <a href="#">BibTeX</a></p>
           </article>
-          <!-- Add more items here -->
+          <!-- More publications here -->
         </div>
       </div>
     </section>
