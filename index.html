@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Soyoung Choi</title>
-  <meta name="description" content="Soyoung Choi — About, Education, Publications." />
+  <meta name="description" content="Soyoung Choi — About, Experience, Publications, Education." />
   <meta name="author" content="SoYoung Choi" />
   <meta name="theme-color" content="#0b0f14" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0f14'/><text x='50' y='60' font-size='56' text-anchor='middle' fill='%23ffd84d' font-family='Arial,sans-serif'>SC</text></svg>">
@@ -12,33 +12,33 @@
   <style>
     /* ===== Color tokens ===== */
     :root{
-      --bg:#0b0f14;       /* dark background */
+      --bg:#0b0f14;
       --card:#0f141b;
       --ink:#e6eef6;
       --muted:#9fb2c7;
-      --accent:#ffd84d;   /* yellow accent (dark mode) */
+      --accent:#ffd84d;
       --rule:#1c2530;
       --ring:#2a3a4c;
       --link:#ffe58a;
     }
+
     @media (prefers-color-scheme: light){
       :root{
-        --bg:#f4f8f1;      /* warm pastel green background */
-        --card:#fffefb;    /* slightly warm white */
+        --bg:#f4f8f1;
+        --card:#fffefb;
         --ink:#142018;
         --muted:#5f6b63;
-    
-        --accent:#94c9a2;  /* soft warm green */
+        --accent:#94c9a2;
         --rule:#dde9dd;
         --ring:#edf5ec;
-    
-        --link:#4f8a63;    /* muted warm green link */
+        --link:#4f8a63;
       }
     }
 
     /* ===== Base ===== */
     html,body{height:100%}
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font:16px/1.65 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Apple SD Gothic Neo, "Malgun Gothic", sans-serif;
@@ -48,53 +48,183 @@
         radial-gradient(70rem 70rem at 120% -20%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 60%),
         radial-gradient(60rem 60rem at -20% -40%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%);
     }
+
     a{color:var(--link); text-decoration:none}
     a:hover{text-decoration:underline}
 
-    .container{max-width:1400px; margin:0 auto; padding:0 24px}
+    .container{
+      max-width:1400px;
+      margin:0 auto;
+      padding:0 24px;
+    }
 
     /* ===== Masthead ===== */
     .masthead{padding:56px 0 24px}
+
     .mast{
-      display:grid; grid-template-columns:140px 1fr; gap:20px; align-items:center;
-      background:var(--card); border:1px solid var(--rule); border-radius:22px; padding:18px;
+      display:grid;
+      grid-template-columns:140px 1fr;
+      gap:20px;
+      align-items:center;
+      background:var(--card);
+      border:1px solid var(--rule);
+      border-radius:22px;
+      padding:18px;
       box-shadow:0 10px 30px color-mix(in oklab, black 30%, transparent);
     }
-    .avatar{width:112px; height:112px; border-radius:18px; object-fit:cover; border:1px solid var(--rule)}
-    .name{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap}
-    .name h1{font-size:clamp(28px,5vw,44px); line-height:1.12; letter-spacing:.02em; margin:0}
-    .tag{font-size:.95rem; color:var(--muted)}
+
+    .avatar{
+      width:112px;
+      height:112px;
+      border-radius:18px;
+      object-fit:cover;
+      border:1px solid var(--rule);
+    }
+
+    .name{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .name h1{
+      font-size:clamp(28px,5vw,44px);
+      line-height:1.12;
+      letter-spacing:.02em;
+      margin:0;
+    }
+
+    .tag{
+      font-size:.95rem;
+      color:var(--muted);
+    }
 
     /* ===== Sections ===== */
     main{padding:18px 0 64px}
     section{margin:22px 0}
-    .section{background:var(--card); border:1px solid var(--rule); border-radius:22px; padding:24px}
+
+    .section{
+      background:var(--card);
+      border:1px solid var(--rule);
+      border-radius:22px;
+      padding:24px;
+    }
 
     /* Heading with Caret icon */
-    .h2{display:flex; align-items:center; gap:.8rem; margin:0 0 12px}
+    .h2{
+      display:flex;
+      align-items:center;
+      gap:.8rem;
+      margin:0 0 12px;
+    }
+
     .h2 .ico{display:inline-block}
+
     .h2.caret .ico{
-      width:0; height:0;
-      border-left:12px solid var(--accent); /* yellow triangle */
+      width:0;
+      height:0;
+      border-left:12px solid var(--accent);
       border-top:7px solid transparent;
       border-bottom:7px solid transparent;
     }
-    .h2 h2{font-size:clamp(18px,2.2vw,24px); margin:0}
 
-    /* Lists */
+    .h2 h2{
+      font-size:clamp(18px,2.2vw,24px);
+      margin:0;
+    }
+
+    /* ===== Lists ===== */
     .about p{margin:.4rem 0}
-    .edu{display:grid; gap:10px}
-    .edu-item{display:grid; grid-template-columns:1fr auto; gap:.6rem; padding:12px; border:1px dashed var(--rule); border-radius:14px}
-    .edu-item h3{font-size:1rem; margin:0}
-    .edu-item .sub{color:var(--muted); font-size:.95rem}
-    .pubs{display:grid; gap:10px}
-    .pub{padding:12px; border:1px solid var(--rule); border-radius:14px}
-    .pub-title{margin:0 0 4px; font-weight:700}
-    .pub-meta{color:var(--muted); font-size:.95rem}
-    .label{display:inline-block; font-size:.75rem; padding:.22rem .48rem; border:1px solid var(--ring); border-radius:999px; color:var(--muted)}
+
+    /* Experience */
+    .exp{
+      display:grid;
+      gap:10px;
+    }
+
+    .exp-item{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:.6rem;
+      padding:12px;
+      border:1px dashed var(--rule);
+      border-radius:14px;
+    }
+
+    .exp-item h3{
+      font-size:1rem;
+      margin:0;
+    }
+
+    .exp-item .sub{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    /* Education */
+    .edu{
+      display:grid;
+      gap:10px;
+    }
+
+    .edu-item{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:.6rem;
+      padding:12px;
+      border:1px dashed var(--rule);
+      border-radius:14px;
+    }
+
+    .edu-item h3{
+      font-size:1rem;
+      margin:0;
+    }
+
+    .edu-item .sub{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    /* Publications */
+    .pubs{
+      display:grid;
+      gap:10px;
+    }
+
+    .pub{
+      padding:12px;
+      border:1px solid var(--rule);
+      border-radius:14px;
+    }
+
+    .pub-title{
+      margin:0 0 4px;
+      font-weight:700;
+    }
+
+    .pub-meta{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .label{
+      display:inline-block;
+      font-size:.75rem;
+      padding:.22rem .48rem;
+      border:1px solid var(--ring);
+      border-radius:999px;
+      color:var(--muted);
+    }
 
     /* Footer */
-    footer{padding:32px 0; color:var(--muted); text-align:center}
+    footer{
+      padding:32px 0;
+      color:var(--muted);
+      text-align:center;
+    }
 
     /* Print tidy */
     @media print{
@@ -105,91 +235,113 @@
   </style>
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"SoYoung Choi","url":"https://example.github.io/"}
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"SoYoung Choi",
+    "url":"https://example.github.io/"
+  }
   </script>
 </head>
+
 <body>
+
+  <!-- ===== Header ===== -->
   <header class="container masthead">
     <div class="mast">
       <img src="./photo.jpg" alt="Portrait of SoYoung Choi" class="avatar" />
+
       <div>
         <div class="name">
           <h1>Soyoung Choi</h1>
         </div>
-        <p class="tag" style="margin:.2rem 0 0">Ph.D. Student at KAIST · Multimodal Learning · Data-Centric AI</p>
+
+        <p class="tag" style="margin:.2rem 0 0">
+          Ph.D. Student at KAIST · Multimodal Learning · Data-Centric AI
+        </p>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- About (no heading, no icon) -->
+
+    <!-- ===== About ===== -->
     <section>
       <div class="section about">
         <p>
-          I am a first-year Ph.D. student at KAIST, advised by Professor Steven Euijong Whang. 
-          My research interests lie in multimodal learning and data-centric AI, with a focus on improving model performance through multimodal data construction, such as augmentation and filtering.
+          I am a first-year Ph.D. student at KAIST, advised by Professor Steven Euijong Whang.
+          My research interests lie in multimodal learning and data-centric AI,
+          with a focus on improving model performance through multimodal data construction,
+          such as augmentation and filtering.
         </p>
+
         <p class="tag">
-          <a href="https://scholar.google.com/citations?user=kIv3HBMAAAAJ&hl=ko" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <a href="https://scholar.google.com/citations?user=kIv3HBMAAAAJ&hl=ko"
+             target="_blank" rel="noopener noreferrer">Google Scholar</a>
           ·
-          <a href="https://www.linkedin.com/in/soyoung-choi-1a2b3c/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/soyoung-choi-1a2b3c/"
+             target="_blank" rel="noopener noreferrer">LinkedIn</a>
           ·
-          <a href="https://drive.google.com/file/d/1IDUpqhSDBm4953NdIXzJZGQ3ysT8jBRd/view?usp=sharing" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a>
+          <a href="https://drive.google.com/file/d/1IDUpqhSDBm4953NdIXzJZGQ3ysT8jBRd/view?usp=sharing"
+             target="_blank" rel="noopener noreferrer">Curriculum Vitae</a>
         </p>
       </div>
     </section>
 
-    <!-- Education -->
+
+    <!-- ===== Experience ===== -->
     <section>
       <div class="section">
-        <div class="h2 caret"><span class="ico" aria-hidden="true"></span><h2>Education</h2></div>
-        <div class="edu">
-          <div class="edu-item">
+
+        <div class="h2 caret">
+          <span class="ico" aria-hidden="true"></span>
+          <h2>Experience</h2>
+        </div>
+
+        <div class="exp">
+
+          <div class="exp-item">
             <div>
-              <h3>Ph.D. in Electrical Engineering — KAIST (Korea Advanced Institute of Science and Technology, South Korea)</h3>
-              <div class="sub">Data Intelligence Lab (advisor: Steven Euijong Whang)</div>
+              <h3>Research Intern — Trillion Labs</h3>
             </div>
-            <div class="sub">Mar. 2026 - Present</div>
+
+            <div class="sub">Sep. 2026 - Present</div>
           </div>
-    
-          <div class="edu-item">
-            <div>
-              <h3>M.S. in Electrical Engineering — KAIST </h3>
-              <div class="sub">Data Intelligence Lab (advisor: Steven Euijong Whang)</div>
-            </div>
-            <div class="sub">Feb.2025 - Feb. 2026</div>
-          </div>
-    
-          <div class="edu-item">
-            <div>
-              <h3>B.S. in Electrical Engineering — KAIST </h3>
-            </div>
-            <div class="sub">Feb.2019 - Feb.2025</div>
-          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Publications -->
+
+    <!-- ===== Publications ===== -->
     <section>
       <div class="section">
-        <div class="h2 caret"><span class="ico" aria-hidden="true"></span><h2>Publications</h2></div>
+
+        <div class="h2 caret">
+          <span class="ico" aria-hidden="true"></span>
+          <h2>Publications</h2>
+        </div>
+
         <div class="pubs">
+
           <article class="pub">
             <p class="pub-title">
               Learning Effective Data Filtering Models from CLIP via Efficient Component-wise Adaptation
               — <span class="label">Under Review</span>
             </p>
+
             <p class="pub-meta">
               <strong>Soyoung Choi*</strong>, Seong-Hyeon Hwang*, Steven Euijong Whang · KAIST
               · <span class="label">Co-first author</span>
             </p>
           </article>
+
           <article class="pub">
             <p class="pub-title">
               MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning
               — <span class="label">NeurIPS 2025</span>
             </p>
+
             <p class="pub-meta">
               Seong-Hyeon Hwang*, <strong>Soyoung Choi*</strong>, Steven Euijong Whang · KAIST
               · <span class="label">Co-first author</span>
@@ -198,17 +350,75 @@
               · <a href="https://neurips.cc/virtual/2025/loc/san-diego/poster/117443">Talk & Slides</a>
             </p>
           </article>
+
         </div>
       </div>
     </section>
+
+
+    <!-- ===== Education ===== -->
+    <section>
+      <div class="section">
+
+        <div class="h2 caret">
+          <span class="ico" aria-hidden="true"></span>
+          <h2>Education</h2>
+        </div>
+
+        <div class="edu">
+
+          <div class="edu-item">
+            <div>
+              <h3>
+                Ph.D. in Electrical Engineering — KAIST
+                (Korea Advanced Institute of Science and Technology, South Korea)
+              </h3>
+
+              <div class="sub">
+                Data Intelligence Lab (advisor: Steven Euijong Whang)
+              </div>
+            </div>
+
+            <div class="sub">Mar. 2026 - Present</div>
+          </div>
+
+          <div class="edu-item">
+            <div>
+              <h3>M.S. in Electrical Engineering — KAIST</h3>
+
+              <div class="sub">
+                Data Intelligence Lab (advisor: Steven Euijong Whang)
+              </div>
+            </div>
+
+            <div class="sub">Feb. 2025 - Feb. 2026</div>
+          </div>
+
+          <div class="edu-item">
+            <div>
+              <h3>B.S. in Electrical Engineering — KAIST</h3>
+            </div>
+
+            <div class="sub">Feb. 2019 - Feb. 2025</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
+
+  <!-- ===== Footer ===== -->
   <footer>
-    <div class="container">© <span id="year"></span> SoYoung Choi</div>
+    <div class="container">
+      © <span id="year"></span> SoYoung Choi
+    </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
